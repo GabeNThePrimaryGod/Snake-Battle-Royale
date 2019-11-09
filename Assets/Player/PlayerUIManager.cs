@@ -10,11 +10,16 @@ public class PlayerUIManager : NetworkBehaviour
     public Text ClientGameStatusText;
     public GameObject NameSelection;
 
+    [Header("Refrences : ")]
     private Player player;
+    public KillFeedManager KillFeed;
+    public PlayerListManager PlayerList;
 
     private void Start()
     {
         player = GetComponent<Player>();
+        KillFeed = GetComponentInChildren<KillFeedManager>();
+        PlayerList = GetComponentInChildren<PlayerListManager>();
 
         if (isServer)
         {
@@ -26,8 +31,6 @@ public class PlayerUIManager : NetworkBehaviour
             HostStartGameUI.SetActive(false);
             ClientGameStatusText.gameObject.SetActive(true);
         }
-
-        StartCoroutine(AutoRefreshPlayerList());
     }
 
     public void SetName(string name)
@@ -54,55 +57,6 @@ public class PlayerUIManager : NetworkBehaviour
 
         player.isNamed = true;
         GameManager.PlayersList.Add(player.PlayerName, player);
-    }
-
-    [SerializeField]
-    private Text KillFeed;
-
-    public void AddKillFeedEntry(string entry)
-    {
-        KillFeed.text = entry + "\n\n" + KillFeed.text;
-    }
-
-    [Header("Player List :")]
-
-    [SerializeField]
-    private float playerListRefreshCooldown = 2;
-
-    [SerializeField]
-    private GameObject playerListItemPrefab;
-
-    [SerializeField]
-    private Transform playerListLocation;
-
-    private List<GameObject> playerListItems = new List<GameObject>();
-
-    private void BuildPlayerList()
-    {
-        foreach(GameObject item in playerListItems)
-        {
-            Destroy(item);
-        }
-
-        foreach(Player player in GameManager.PlayersList.Values)
-        {
-            GameObject item = Instantiate(playerListItemPrefab, playerListLocation);
-
-            item.transform.name = player.name;
-            if(!player.isDead)
-                item.GetComponentInChildren<Text>().text = player.name;
-            else
-                item.GetComponentInChildren<Text>().text = player.name + " | DEAD";
-
-            playerListItems.Add(item);
-        }
-    }
-
-    private IEnumerator AutoRefreshPlayerList()
-    {
-        yield return new WaitForSeconds(playerListRefreshCooldown);
-        BuildPlayerList();
-        StartCoroutine(AutoRefreshPlayerList());
     }
 
     [SerializeField]

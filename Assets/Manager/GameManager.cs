@@ -30,7 +30,7 @@ public class GameManager : NetworkBehaviour
 
     public int PlayersAlive = 0;
     [SerializeField]
-    private bool OnePlayerMode = false;
+    private bool onePlayerMode = false;
 
     private void Update()
     {
@@ -41,10 +41,10 @@ public class GameManager : NetworkBehaviour
             foreach (Player player in PlayersList.Values)
                 if (!player.isDead)
                     playersAlive++;
-
+            
             PlayersAlive = playersAlive;
 
-            if(playersAlive == 1 && !OnePlayerMode)
+            if(playersAlive == 1 && !onePlayerMode)
             {
                 foreach (Player player in PlayersList.Values)
                 {

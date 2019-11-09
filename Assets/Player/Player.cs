@@ -6,19 +6,18 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(NetworkIdentity))]
 public class Player : NetworkBehaviour
 {
-    [SyncVar]
-    public string PlayerName;
-
+    [SyncVar] public string PlayerName;
     public int score = 1;
-
-    public string netId;
-
+    //public string netId;
     public bool isNamed = false;
+    public PlayerUIManager UI;
     
     public void Start()
     {
-        netId = GetComponent<NetworkIdentity>().netId.ToString();
+       //netId = GetComponent<NetworkIdentity>().netId.ToString();
         PlayerName = "UnamedPlayer " + netId;
+
+        UI = GetComponent<PlayerUIManager>();
 
         if (isLocalPlayer)
         {
@@ -47,8 +46,9 @@ public class Player : NetworkBehaviour
 
     public void Die(string killerName)
     {
+        /*
         isDead = true;
-        GameManager.LocalPlayer.GetComponent<PlayerUIManager>().AddKillFeedEntry(killerName + " => " + PlayerName);
+        GameManager.LocalPlayer.UI.KillFeed.AddEntry(killerName, PlayerName);
 
         GameObject playerLoot = Instantiate(loot);
         playerLoot.transform.position = transform.position;
@@ -60,8 +60,13 @@ public class Player : NetworkBehaviour
 
         foreach (Component component in componentDestroyOnDeath)
             Destroy(component);
+        */
 
-        //CmdDie(killerName);
+        if(isLocalPlayer && !isDead)
+        {
+            isDead = true;
+            CmdDie(killerName);
+        }
     }
 
     [Command]
@@ -74,7 +79,7 @@ public class Player : NetworkBehaviour
     private void RpcDie(string killerName)
     {
         isDead = true;
-        GameManager.LocalPlayer.GetComponent<PlayerUIManager>().AddKillFeedEntry(killerName + " => " + PlayerName);
+        GameManager.LocalPlayer.UI.KillFeed.AddEntry(killerName, PlayerName);
 
         GameObject playerLoot = Instantiate(loot);
         playerLoot.transform.position = transform.position;

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d0716acbd6049784b92be1807498e9f3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - killFeedLocation: {instanceID: 0}
+  - killFeedElementPrefab: {instanceID: 0}
+  - defaultSprite: {fileID: 21300000, guid: d59b361516403de45bcb2ec649df5091, type: 3}
+  - tailKillSprite: {fileID: 21300000, guid: a964b3ce453fcda48a483bbd357c42d7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

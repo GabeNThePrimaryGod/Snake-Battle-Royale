@@ -62,11 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\JoinLANGame.cs" />
+    <Compile Include="Assets\KillFeedManager.cs" />
     <Compile Include="Assets\Manager\GameManager.cs" />
     <Compile Include="Assets\Manager\LootSpawningManager.cs" />
     <Compile Include="Assets\Menu\HostGame.cs" />
     <Compile Include="Assets\Menu\joinGame.cs" />
+    <Compile Include="Assets\Menu\JoinLANGame.cs" />
     <Compile Include="Assets\Menu\Menu.cs" />
     <Compile Include="Assets\Menu\RoomListItem.cs" />
     <Compile Include="Assets\Player\LootData.cs" />
@@ -77,9 +78,11 @@
     <Compile Include="Assets\Player\PlayerSetup.cs" />
     <Compile Include="Assets\Player\PlayerUIManager.cs" />
     <Compile Include="Assets\Player\TailData.cs" />
+    <Compile Include="Assets\PlayerListManager.cs" />
     <Compile Include="Assets\SimpleEnviroment\Scripts\BasicAnimator.cs" />
     <Compile Include="Assets\SimpleEnviroment\Scripts\SceneManager.cs" />
     <Compile Include="Assets\SimpleEnviroment\Scripts\Storage.cs" />
+    <Compile Include="Assets\UI\KillFeedElement.cs" />
     <None Include="Assets\SimpleEnviroment\Particles\shader\Mobile-Particle-Add_ZTOP.shader" />
     <None Include="Assets\SimpleEnviroment\Particles\shader\Particle_Add_overlay.shader" />
     <Reference Include="Unity.Timeline.Editor">
