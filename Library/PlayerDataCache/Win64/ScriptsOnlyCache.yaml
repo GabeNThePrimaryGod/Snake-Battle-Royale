@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - GameManager
     - HostGame
     - JoinLANGame
+    - KillFeedChatMessage
     - KillFeedElement
     - KillFeedManager
     - LootData
@@ -12,12 +13,16 @@ ScriptsOnlyBuild:
     - Menu
     - Player
     - PlayerCameraMotor
+    - PlayerChat
+    - PlayerChatMessage
     - PlayerGrowingMotor
     - PlayerListManager
     - PlayerMove
     - PlayerSetup
     - PlayerUIManager
+    - Ressources
     - RoomListItem
+    - SystemChatMessage
     - TailData
     - joinGame
     UnityEditor.Graphs.dll:
@@ -93,65 +98,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9248}
     - Class: 114
-      Script: {instanceID: 9346}
+      Script: {instanceID: 9318}
     - Class: 114
-      Script: {instanceID: 9392}
+      Script: {instanceID: 9348}
     - Class: 114
-      Script: {instanceID: 9394}
+      Script: {instanceID: 9366}
     - Class: 114
       Script: {instanceID: 9396}
     - Class: 114
+      Script: {instanceID: 9398}
+    - Class: 114
       Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 9406}
+      Script: {instanceID: 9404}
     - Class: 114
-      Script: {instanceID: 9414}
+      Script: {instanceID: 9410}
     - Class: 114
-      Script: {instanceID: 9416}
+      Script: {instanceID: 9418}
     - Class: 114
-      Script: {instanceID: 9422}
+      Script: {instanceID: 9420}
     - Class: 114
-      Script: {instanceID: 9442}
+      Script: {instanceID: 9426}
     - Class: 114
-      Script: {instanceID: 9450}
+      Script: {instanceID: 9446}
     - Class: 114
-      Script: {instanceID: 9452}
+      Script: {instanceID: 9454}
     - Class: 114
-      Script: {instanceID: 9462}
+      Script: {instanceID: 9456}
     - Class: 114
-      Script: {instanceID: 9486}
+      Script: {instanceID: 9466}
     - Class: 114
-      Script: {instanceID: 9492}
+      Script: {instanceID: 9490}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9496}
     - Class: 114
-      Script: {instanceID: 9932}
+      Script: {instanceID: 9888}
     - Class: 114
-      Script: {instanceID: 10046}
+      Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10078}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 10102}
+      Script: {instanceID: 10052}
     - Class: 114
-      Script: {instanceID: 10134}
+      Script: {instanceID: 10084}
     - Class: 114
-      Script: {instanceID: 10180}
+      Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 10208}
+      Script: {instanceID: 10140}
     - Class: 114
-      Script: {instanceID: 10292}
+      Script: {instanceID: 10142}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10188}
     - Class: 114
-      Script: {instanceID: 10610}
+      Script: {instanceID: 10216}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10394}
     - Class: 114
-      Script: {instanceID: 103102}
+      Script: {instanceID: 10466}
     - Class: 114
-      Script: {instanceID: 103728}
+      Script: {instanceID: 10624}
+    - Class: 114
+      Script: {instanceID: 10762}
+    - Class: 114
+      Script: {instanceID: 10868}
+    - Class: 114
+      Script: {instanceID: 10894}
+    - Class: 114
+      Script: {instanceID: 10906}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -226,83 +241,91 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9306}
     - Class: 114
-      Script: {instanceID: 9346}
+      Script: {instanceID: 9318}
     - Class: 114
-      Script: {instanceID: 9364}
+      Script: {instanceID: 9348}
     - Class: 114
-      Script: {instanceID: 9392}
+      Script: {instanceID: 9366}
     - Class: 114
-      Script: {instanceID: 9394}
+      Script: {instanceID: 9368}
     - Class: 114
       Script: {instanceID: 9396}
     - Class: 114
+      Script: {instanceID: 9398}
+    - Class: 114
       Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 9406}
+      Script: {instanceID: 9404}
     - Class: 114
-      Script: {instanceID: 9414}
-    - Class: 114
-      Script: {instanceID: 9416}
+      Script: {instanceID: 9410}
     - Class: 114
       Script: {instanceID: 9418}
     - Class: 114
+      Script: {instanceID: 9420}
+    - Class: 114
       Script: {instanceID: 9422}
     - Class: 114
-      Script: {instanceID: 9440}
+      Script: {instanceID: 9426}
     - Class: 114
-      Script: {instanceID: 9442}
+      Script: {instanceID: 9444}
     - Class: 114
-      Script: {instanceID: 9450}
+      Script: {instanceID: 9446}
     - Class: 114
-      Script: {instanceID: 9452}
+      Script: {instanceID: 9454}
     - Class: 114
-      Script: {instanceID: 9462}
+      Script: {instanceID: 9456}
     - Class: 114
-      Script: {instanceID: 9492}
+      Script: {instanceID: 9466}
     - Class: 114
-      Script: {instanceID: 9680}
+      Script: {instanceID: 9496}
     - Class: 114
-      Script: {instanceID: 9884}
+      Script: {instanceID: 9684}
     - Class: 114
-      Script: {instanceID: 9900}
+      Script: {instanceID: 9888}
     - Class: 114
-      Script: {instanceID: 9932}
+      Script: {instanceID: 9904}
     - Class: 114
-      Script: {instanceID: 10046}
+      Script: {instanceID: 9936}
     - Class: 114
-      Script: {instanceID: 10078}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 10102}
+      Script: {instanceID: 10052}
     - Class: 114
-      Script: {instanceID: 10114}
+      Script: {instanceID: 10084}
     - Class: 114
-      Script: {instanceID: 10134}
+      Script: {instanceID: 10108}
     - Class: 114
-      Script: {instanceID: 10160}
+      Script: {instanceID: 10120}
+    - Class: 114
+      Script: {instanceID: 10140}
+    - Class: 114
+      Script: {instanceID: 10142}
     - Class: 114
       Script: {instanceID: 10168}
     - Class: 114
-      Script: {instanceID: 10208}
+      Script: {instanceID: 10176}
     - Class: 114
-      Script: {instanceID: 10292}
+      Script: {instanceID: 10216}
     - Class: 114
-      Script: {instanceID: 10294}
+      Script: {instanceID: 10300}
     - Class: 114
-      Script: {instanceID: 10386}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10394}
     - Class: 114
-      Script: {instanceID: 10610}
+      Script: {instanceID: 10414}
     - Class: 114
-      Script: {instanceID: 10748}
+      Script: {instanceID: 10466}
     - Class: 114
-      Script: {instanceID: 10796}
+      Script: {instanceID: 10624}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10762}
     - Class: 114
-      Script: {instanceID: 103102}
+      Script: {instanceID: 10810}
     - Class: 114
-      Script: {instanceID: 103728}
+      Script: {instanceID: 10868}
+    - Class: 114
+      Script: {instanceID: 10894}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -376,6 +399,12 @@ ScriptsOnlyBuild:
     className: ArmModel
   - hash:
       serializedVersion: 2
+      Hash: c10cbd18557719aae4583acca5233164
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KillFeedChatMessage
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -392,6 +421,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkIdentity
+  - hash:
+      serializedVersion: 2
+      Hash: 93495b0409b9b5909c09c23586dcab26
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerListManager
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -898,7 +933,7 @@ ScriptsOnlyBuild:
     className: NetworkTransformVisualizer
   - hash:
       serializedVersion: 2
-      Hash: 9ff91f891c1737e159da4df3c2570992
+      Hash: a38420c1065fc75cc919fd3ad9b7820c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerUIManager
@@ -908,6 +943,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: a85c39d07220047d634b9899d2f97f22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerChatMessage
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -958,6 +999,12 @@ ScriptsOnlyBuild:
     className: TailData
   - hash:
       serializedVersion: 2
+      Hash: 29e53550154546a8dcec5e0fe4dfac9f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerChat
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -976,7 +1023,7 @@ ScriptsOnlyBuild:
     className: joinGame
   - hash:
       serializedVersion: 2
-      Hash: dbd7a3fa9d0191eb57aa7ceb78134044
+      Hash: f76552f8b7f0ccd2434ebadd93358083
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LootSpawningManager
@@ -1084,6 +1131,12 @@ ScriptsOnlyBuild:
     className: NetworkBehaviour
   - hash:
       serializedVersion: 2
+      Hash: b783787b6a6ba4c3002a8ca4380d434e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KillFeedManager
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1180,6 +1233,18 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 77c546138650d58dacdca52c5a6a52b1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SystemChatMessage
+  - hash:
+      serializedVersion: 2
+      Hash: 0a090d56a8fc3bc77602fe2ed883605d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ressources
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1190,18 +1255,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 950e6902576fd92ab9e0e23fd1bc83c3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: KillFeedManager
-  - hash:
-      serializedVersion: 2
-      Hash: 93495b0409b9b5909c09c23586dcab26
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerListManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

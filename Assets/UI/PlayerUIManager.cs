@@ -14,12 +14,14 @@ public class PlayerUIManager : NetworkBehaviour
     private Player player;
     public KillFeedManager KillFeed;
     public PlayerListManager PlayerList;
+    public PlayerChat Chat;
 
     private void Start()
     {
         player = GetComponent<Player>();
         KillFeed = GetComponentInChildren<KillFeedManager>();
         PlayerList = GetComponentInChildren<PlayerListManager>();
+        Chat = GetComponentInChildren<PlayerChat>();
 
         if (isServer)
         {

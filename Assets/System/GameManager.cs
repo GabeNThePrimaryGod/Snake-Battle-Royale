@@ -8,9 +8,7 @@ public enum GameStatus { WaitingForHost, InProgress, Ended }
 public class GameManager : NetworkBehaviour
 {
     public static Dictionary<string, Player> PlayersList = new Dictionary<string, Player>();
-
     public static Player LocalPlayer;
-
     public static GameStatus gameStatus = GameStatus.WaitingForHost;
 
     public static void SetGameStatus(GameStatus status)

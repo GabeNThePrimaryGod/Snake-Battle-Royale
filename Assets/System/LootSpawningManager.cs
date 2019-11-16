@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LootSpawningManager : MonoBehaviour
 {
-    [SerializeField]
     private List<Transform> lootSpots = new List<Transform>();
 
     [SerializeField]

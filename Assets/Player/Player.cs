@@ -46,22 +46,6 @@ public class Player : NetworkBehaviour
 
     public void Die(string killerName)
     {
-        /*
-        isDead = true;
-        GameManager.LocalPlayer.UI.KillFeed.AddEntry(killerName, PlayerName);
-
-        GameObject playerLoot = Instantiate(loot);
-        playerLoot.transform.position = transform.position;
-        playerLoot.GetComponent<LootData>().LootSize = GetComponentInChildren<PlayerGrowingMotor>().tails.Count;
-        playerLoot.GetComponent<LootData>().playerName = PlayerName;
-
-        foreach (GameObject go in goDestroyOnDeath)
-            Destroy(go);
-
-        foreach (Component component in componentDestroyOnDeath)
-            Destroy(component);
-        */
-
         if(isLocalPlayer && !isDead)
         {
             isDead = true;
@@ -86,15 +70,13 @@ public class Player : NetworkBehaviour
         playerLoot.GetComponent<LootData>().LootSize = GetComponentInChildren<PlayerGrowingMotor>().tails.Count;
         playerLoot.GetComponent<LootData>().playerName = PlayerName;
 
-        foreach (GameObject go in goDestroyOnDeath)
-            Destroy(go);
-
-        foreach (Component component in componentDestroyOnDeath)
-            Destroy(component);
+        foreach (GameObject go in goDestroyOnDeath) Destroy(go);
+        foreach (Component component in componentDestroyOnDeath) Destroy(component);
     }
 
     private void OnDestroy()
     {
+        // uniquement si c'est une deconnection avant ou pendant la partie, pas a la mort du joueur ou lors de sa deconnection a la fin de le partie
         if (isNamed && !isDead)
         {
             GameManager.PlayersList.Remove(PlayerName);
@@ -105,31 +87,19 @@ public class Player : NetworkBehaviour
 
     [Header("Enable OnStart :")]
 
-    [SerializeField]
-    private List<GameObject> gameObjectsEnableOnGameStart = new List<GameObject>();
-
-    [SerializeField]
-    private List<Behaviour> componentsEnableOnGameStart = new List<Behaviour>();
+    [SerializeField] List<GameObject> gameObjectsEnableOnGameStart = new List<GameObject>();
+    [SerializeField] List<Behaviour> componentsEnableOnGameStart = new List<Behaviour>();
 
     [Header("Disable OnStart :")]
 
-    [SerializeField]
-    private List<GameObject> gameObjectsDisableOnGameStart = new List<GameObject>();
-
-    [SerializeField]
-    private List<Behaviour> componentsDisableOnGameStart = new List<Behaviour>();
+    [SerializeField] List<GameObject> gameObjectsDisableOnGameStart = new List<GameObject>();
+    [SerializeField] List<Behaviour> componentsDisableOnGameStart = new List<Behaviour>();
 
     [Server]
-    public void StartGame()
-    {
-        CmdStartGame();
-    }
+    public void StartGame() { CmdStartGame(); }
 
     [Command]
-    private void CmdStartGame()
-    {
-        RpcStartGame();
-    }
+    private void CmdStartGame() { RpcStartGame(); }
 
     [ClientRpc]
     private void RpcStartGame()
@@ -139,17 +109,11 @@ public class Player : NetworkBehaviour
 
     public void LocalPlayerStartGameSetup()
     {
-        foreach (GameObject gameObject in gameObjectsEnableOnGameStart)
-            gameObject.SetActive(true);
+        foreach (GameObject gameObject in gameObjectsEnableOnGameStart) gameObject.SetActive(true);
+        foreach (Behaviour component in componentsEnableOnGameStart) component.enabled = true;
 
-        foreach (Behaviour component in componentsEnableOnGameStart)
-            component.enabled = true;
-
-        foreach (GameObject gameObject in gameObjectsDisableOnGameStart)
-            gameObject.SetActive(false);
-
-        foreach (Behaviour component in componentsDisableOnGameStart)
-            component.enabled = false;
+        foreach (GameObject gameObject in gameObjectsDisableOnGameStart) gameObject.SetActive(false);
+        foreach (Behaviour component in componentsDisableOnGameStart) component.enabled = false;
     }
 
     #endregion GameStarting
