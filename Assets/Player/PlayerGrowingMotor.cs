@@ -71,10 +71,6 @@ public class PlayerGrowingMotor : MonoBehaviour
 
         lastTail = tail;
         tails.Add(tail);
-
-        //Destroy(lastTail.GetComponent<TailData>());
-
-        AddTail(9);
     }
 
     public void AddTail(int amount = 1)
@@ -88,6 +84,8 @@ public class PlayerGrowingMotor : MonoBehaviour
                 new Vector3(lastTailData.nexTailLoacation.position.x, 
                     lastTailData.nexTailLoacation.position.y, 
                     lastTailData.nexTailLoacation.position.z);
+
+            tail.transform.rotation = new Quaternion();
 
             tail.GetComponent<TailData>().player = player;
             tail.GetComponent<TailData>().index = tails.Count;
@@ -160,8 +158,8 @@ public class PlayerGrowingMotor : MonoBehaviour
         if (collision.gameObject.GetComponent<LootData>() != null)
         {
             LootData loot = collision.gameObject.GetComponent<LootData>();
-            player.score++; // DEBUG
-            //AddTail(loot.LootSize);
+            player.score++;
+            AddTail(loot.LootSize);
 
             Destroy(loot.gameObject);
         }

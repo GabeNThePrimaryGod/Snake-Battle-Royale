@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class PlayerCameraMotor : MonoBehaviour
 {
-    private Player player;
-    private PlayerGrowingMotor growingMotor;
-
+    private Player player = null;
     private Vector3 startLocalPosition;
-    private Vector3 startLocalEulerAngle;
 
     private void Start()
     {
         player = GetComponentInParent<Player>();
-        growingMotor = GetComponentInParent<PlayerGrowingMotor>();
-
         startLocalPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-        startLocalEulerAngle = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        float value = (float)player.score / 2 ;
-        transform.localPosition = new Vector3(startLocalPosition.x , startLocalPosition.y + value / 2, startLocalPosition.z - value / 2);
+        float distance = player.score / 4;
+        Vector3 newPosition = new Vector3(startLocalPosition.x, startLocalPosition.y + distance, startLocalPosition.z - distance);
+
+        Debug.Log("Position : " + transform.localPosition);
+        Debug.Log("New Position : " + newPosition);
+
+        //transform.localPosition += (transform.localPosition - newPosition) * Time.fixedDeltaTime;
     }
 }
