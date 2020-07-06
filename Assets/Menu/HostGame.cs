@@ -15,15 +15,16 @@ public class HostGame : MonoBehaviour {
     private void Start() {
         networkManager = NetworkManager.singleton;
         if (networkManager.matchMaker == null)
+        {
             networkManager.StartMatchMaker();
+        }
     }
 
-    public void SetRoomName (string name) {
-        roomName = name;
-    }
+    public void SetRoomName (string name) => roomName = name;
 
-    public void CreateRoom() {
-
+    public void CreateRoom()
+    {
+        // TODO : faire une methode de verification du nom de la partie dans une class singleton Tools ou autre
         if(roomName != "" && roomName != null) {
 
             Debug.Log("La partie " + roomName + " a été crée");
@@ -33,5 +34,4 @@ public class HostGame : MonoBehaviour {
             Debug.LogWarning("Room name invalid");
         }
     }
-
 }
